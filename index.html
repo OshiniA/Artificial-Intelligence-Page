@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emerging Technologies and Society</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+</head>
+<body>
+
+<header>
+  <a href="#" class="brand">Our Website</a>
+  <div class="menu-btn"></div>
+  <div class="navigation">
+    <div class="navigation-items">
+      <a href="index.html">Home</a>
+      <a href="AI.html">Artificial Intelligence</a>
+      <a href="economics-info.html">Economics</a>
+      <a href="printing.html">3D Printing</a>
+    </div>
+  </div>
+</header>
+
+<section class="home">
+  <video class="video-slide active" src="videos/robot.mp4" autoplay muted loop></video>
+  <video class="video-slide" src="videos/chess.mp4" autoplay muted loop></video>
+  <video class="video-slide" src="videos/economics.mp4" autoplay muted loop></video>
+  <video class="video-slide" src="videos/3dPrinting.mp4" autoplay muted loop></video>
+
+  <div class="content active">
+    <h1>Emerging Technologies and Society<br><span></span></h1>
+   
+  </div>
+
+  <div class="content">
+    <h1>ARTIFICIAL INTELLIGENCE<br><span></span></h1>
+    <p>What is AI? </p>
+    <a href="AI.html">Read More</a>
+  </div>
+
+  <div class="content">
+    <h1>ECONOMICS & Computer Science<br><span></span></h1>
+    <p>Understanding the field of Economics & its connection to Computer Science.</p>
+    <a href="economics-info.html">Read More</a>
+  </div>
+
+  <div class="content">
+    <h1>3D PRINTING<br><span></span></h1>
+    
+    <p>What is 3D printing?</p>
+    <a href="printing.html">Read More</a>
+  </div>  
+
+  </div>
+  <div class="slider-navigation">
+    <div class="nav-btn active"></div>
+    <div class="nav-btn"></div>
+    <div class="nav-btn"></div>
+    <div class="nav-btn"></div>
+  </div>
+</section>
+<script type="text/javascript">
+  //Javascript of responsive navigation menu
+  const menuBtn = document.querySelector(".menu-btn");
+  const navigation = document.querySelector(".navigation");
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+  });
+
+  //* Javascript for slide navigation menu
+  const btns = document.querySelectorAll(".nav-btn");
+  const slides = document.querySelectorAll(".video-slide");
+  const contents = document.querySelectorAll(".content");
+
+  var sliderNav = function(manual) {
+    btns.forEach((btn) => {
+      btn.classList.remove("active")
+    });
+
+    slides.forEach((slide) => {
+      slide.classList.remove("active")
+    });
+
+     contents.forEach((content) => {
+      content.classList.remove("active")
+    });
+
+    btns[manual].classList.add("active");
+    slides[manual].classList.add("active");
+    contents[manual].classList.add("active");
+  }
+
+  btns.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      sliderNav(i);
+    });
+  });
+  
+</script>
+</body>
+</html>
